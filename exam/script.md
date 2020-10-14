@@ -14,7 +14,7 @@
 
 * 비밀 번호 세팅
 
-`passwd centos`
+`sudo passwd centos`
 
 _password : centos_
  

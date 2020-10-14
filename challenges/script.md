@@ -423,3 +423,13 @@ iv. In you cluster, create a user named “training” with password “training
 ![img15](./img/img15.png)
 
 #4
+
+![img16](./img/img16.png)
+
+![img17](./img/img17.png)
+
+![img18](./img/img18.png)
+
+![img19](./img/img19.png)
+
+![img20](./img/img20.png)
