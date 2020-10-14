@@ -154,19 +154,25 @@ export PATH=$PATH:$JAVA_HOME/bin
 ```
 세팅 후 재접속
 
+```
+echo $JAVA_HOME
+```
+
+ ![img7](./img/img7.png)
+
 ### 3. Install a supported JDBC Connector
 
 _모든 서버에 설치_
 
 `wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.49.tar.gz`
 
-`tar zxvf mysql-connector-java-5.1.46.tar.gz`
+`tar zxvf mysql-connector-java-5.1.49.tar.gz`
 
 `sudo mkdir -p /usr/share/java/`
 
-`cd mysql-connector-java-5.1.46`
+`cd mysql-connector-java-5.1.49`
 
-`sudo cp mysql-connector-java-5.1.46-bin.jar /usr/share/java/mysql-connector-java.jar`
+`sudo cp mysql-connector-java-5.1.49-bin.jar /usr/share/java/mysql-connector-java.jar`
 
 ### 4. Install Databases (MariaDB)
 
@@ -272,4 +278,42 @@ Thanks for using MariaDB!
 
 _password : 1234_
 
+### 5. Create the databases and access grants you will need
 
+`mysql -u root -p`
+
+`CREATE DATABASE scm DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON scm.* TO 'scm'@'%' IDENTIFIED BY '1234';`
+
+`CREATE DATABASE amon DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON amon.* TO 'amon'@'%' IDENTIFIED BY '1234';`
+
+`CREATE DATABASE rman DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON rman.* TO 'rman'@'%' IDENTIFIED BY '1234';`
+
+`CREATE DATABASE hue DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON hue.* TO 'hue'@'%' IDENTIFIED BY '1234';`
+
+`CREATE DATABASE metastore DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON metastore.* TO 'hive'@'%' IDENTIFIED BY '1234';`
+
+`CREATE DATABASE sentry DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON sentry.* TO 'sentry'@'%' IDENTIFIED BY '1234';`
+
+`CREATE DATABASE nav DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON nav.* TO 'nav'@'%' IDENTIFIED BY '1234';`
+
+`CREATE DATABASE navms DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON navms.* TO 'navms'@'%' IDENTIFIED BY '1234';`
+
+`CREATE DATABASE oozie DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
+
+`GRANT ALL ON oozie.* TO 'oozie'@'%' IDENTIFIED BY '1234';`
