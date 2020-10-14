@@ -57,7 +57,7 @@ Add the following linux accounts to all nodes
  sudo chmod -w /etc/sudoers
 
 ```
- ![img2](/img/img2.png)
+ ![img2](./img/img2.png)
 
 List the your instances by IP address and DNS name (don’t use /etc/hosts for this)
 
@@ -90,9 +90,18 @@ List the file system capacity for the first node (master node)
 ```
 df -h
 ```
- ![img3](/img/img3.png)
+ ![img3](./img/img3.png)
  
 List the command and output for yum repolist enabled
+```
+sudo vi /etc/yum/pluginconf.d/fastestmirror.conf
+enabled=0
+yum repolist
+
+```
+ ![img4](./img/img4.png)
+ 
+ 
 List the /etc/passwd entries for training (only in master name node) List the /etc/group entries for skcc (only in master name node)
 List output of the flowing commands:
  1. getent group skcc
