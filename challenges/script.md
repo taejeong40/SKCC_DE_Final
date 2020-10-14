@@ -1,5 +1,6 @@
 # 최종 Assessment - 사공태정 
 
+#Part1
 
 ### 접속
 
@@ -18,7 +19,7 @@
 
 * 비밀 번호 세팅
 
-`passwd centos`
+`sudo passwd centos`
 
 _password : centos_
  
@@ -381,8 +382,7 @@ _CM 서버에 설치_
 
 준비 완료 시 출력 : `INFO WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.`
 
-`http://13.124.143.184:7180` 접속 후 admin / admin 으로 로그인
-
+`http://3.35.99.0:7180` 접속 후 admin / admin 으로 로그인
 
 ii. The Cluster does not have to be in HA mode.
 
@@ -395,6 +395,14 @@ install that service) are installed:
 5. Impala 
 6. HUE
 
+![img9](./img/img9.png)
+
+
 iv. In you cluster, create a user named “training” with password “training”
     1. You should have already created the linux user from previous
         step. Now, make sure user “training” has both a linux and HDFS home directory
+        
+![img10](./img/img10.png)
+
+# Part2
+
