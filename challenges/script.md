@@ -446,3 +446,8 @@ iv. In you cluster, create a user named “training” with password “training
 #7
 
 ![img23](./img/img23.png)
+
+
+#9
+
+![img24](./img/img24.png)
