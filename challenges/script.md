@@ -16,6 +16,30 @@
 
 ### 환경 세팅
 
+* 호스트 세팅
+
+  `sudo hostnamectl set-hostname cm.bdai.com`
+  `sudo hostnamectl set-hostname m1.bdai.com`
+  `sudo hostnamectl set-hostname d1.bdai.com`
+  `sudo hostnamectl set-hostname d2.bdai.com`
+  `sudo hostnamectl set-hostname d3.bdai.com`
+
+  `sudo vi /etc/hosts`
+
+  ```
+  10.0.0.111  cm.bdai.com cm
+  10.0.0.239  m1.bdai.com m1
+  10.0.0.177   d1.bdai.com d1
+  10.0.0.124  d2.bdai.com d2
+  10.0.0.174  d3.bdai.com d3
+  ```
+
+  `getent hosts`
+  
+  세팅 후 재접속
+
+>>>>>> img1.png  
+
 * 비밀 번호 세팅
 
 `passwd centos`
@@ -32,23 +56,7 @@ PasswordAuthentication yes
 
 `ssh centos@[ip]`
 
-* 호스트 세팅
 
-  `sudo hostnamectl set-hostname [node-name].bdai.com`
-
-  `sudo vi /etc/hosts`
-
-  ```
-  10.0.0.111  cm.bdai.com cm
-  10.0.0.239  m1.bdai.com m1
-  10.0.0.177   d1.bdai.com d1
-  10.0.0.124  d2.bdai.com d2
-  10.0.0.174  d3.bdai.com d3
-  ```
-
-  `getent hosts`
-  
-  세팅 후 재접속
 
 # 1. Create a CDH Cluster on AWS
 
@@ -58,6 +66,23 @@ Add the following linux accounts to all nodes
  2. Set the password for user “training” to “training” 
  3. Create the group skcc and add training to it
  4. Give training sudo capabilities
+ 
+ ```
+ sudo useradd training
+ sudo echo ‘training’ | sudo passwd --stdin training
+ sudo usermod -u 3800 training
+
+ sudo groupadd skcc
+ sudo usermod -g skcc training
+ 
+ sudo chmod +w /etc/sudoers
+ sudo vi /etc/sudoers
+ training    ALL=(ALL)   NOPASSWD: ALL
+ sudo chmod -w /etc/sudoers
+
+
+ su training`
+```
 List the your instances by IP address and DNS name (don’t use /etc/hosts for this)
 List the Linux release you are using
 List the file system capacity for the first node (master node)
