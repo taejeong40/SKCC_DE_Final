@@ -327,3 +327,54 @@ show databases;
 ```
 
 ![img8](./img/img8.png)
+
+
+
+## c.Install Cloudera Manager
+i. Specifically, you MUST install CDH version 5.15.2 You will lose points if you install any other version of CDH.
+
+### 1. Install Cloudera Manager Server
+
+_CM 서버에 설치_
+
+`sudo yum install cloudera-manager-daemons cloudera-manager-server`
+
+`sudo vi /etc/default/cloudera-scm-server`
+
+```shell
+export CM_JAVA_OPTS="-Xmx4G ..."
+```
+
+### 2. Set up the Cloudera Manager Database
+
+_CM 서버에 설치_
+
+`sudo /usr/share/cmf/schema/scm_prepare_database.sh mysql scm scm 1234`
+
+### 3. Install CDH and Other Software
+
+_CM 서버에 설치_
+
+`sudo systemctl start cloudera-scm-server`
+
+`sudo tail -f /var/log/cloudera-scm-server/cloudera-scm-server.log`
+
+준비 완료 시 출력 : `INFO WebServerImpl:com.cloudera.server.cmf.WebServerImpl: Started Jetty server.`
+
+`http://13.124.143.184:7180` 접속 후 admin / admin 으로 로그인
+
+
+ii. The Cluster does not have to be in HA mode.
+
+iii. Make sure that the following services (and any necessary services to
+install that service) are installed: 
+1. HDFS
+2. YARN 
+3. Sqoop 
+4. Hive 
+5. Impala 
+6. HUE
+
+iv. In you cluster, create a user named “training” with password “training”
+    1. You should have already created the linux user from previous
+        step. Now, make sure user “training” has both a linux and HDFS home directory
