@@ -82,7 +82,7 @@ List the your instances by IP address and DNS name (don’t use /etc/hosts for t
   `getent hosts`
   
   세팅 후 재접속
- ![img1](./challenges/img/img1.png)
+ ![img1](./img/img1.png)
 
 List the Linux release you are using
 List the file system capacity for the first node (master node)
