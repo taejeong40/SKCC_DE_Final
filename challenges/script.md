@@ -333,7 +333,27 @@ show databases;
 ## c.Install Cloudera Manager
 i. Specifically, you MUST install CDH version 5.15.2 You will lose points if you install any other version of CDH.
 
-### 1. Install Cloudera Manager Server
+## install using CM 5.15.x
+
+### 1. Configure a Repository for Cloudera Manager
+
+_모든 서버에 설치_
+
+`sudo yum install -y wget`
+
+`sudo vi /etc/yum.repos.d/cloudera-manager.repo`
+
+```
+[cloudera-manager]
+name = Cloudera Manager, Version 5.15.2
+baseurl = https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/5.15.2/
+gpgkey = https://archive.cloudera.com/redhat/cdh/RPM-GPG-KEY-cloudera
+gpgcheck = 1
+```
+
+`sudo rpm --import https://archive.cloudera.com/cm5/redhat/7/x86_64/cm/RPM-GPG-KEY-cloudera`
+
+### 2. Install Cloudera Manager Server
 
 _CM 서버에 설치_
 
@@ -345,13 +365,13 @@ _CM 서버에 설치_
 export CM_JAVA_OPTS="-Xmx4G ..."
 ```
 
-### 2. Set up the Cloudera Manager Database
+### 3. Set up the Cloudera Manager Database
 
 _CM 서버에 설치_
 
 `sudo /usr/share/cmf/schema/scm_prepare_database.sh mysql scm scm 1234`
 
-### 3. Install CDH and Other Software
+### 4. Install CDH and Other Software
 
 _CM 서버에 설치_
 
