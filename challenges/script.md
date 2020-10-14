@@ -128,11 +128,6 @@ getent passwd training
 Use MariaDB as the database for all the services. 
 You may choose your own username and passwords but make a record of it so that we may access them.
 
-List the following in your GitHub
-1. A command and output that shows the hostname of your database server
-2. A command and output that reports the database server version
-3. A command and output that lists all the databases in the server
-
 _모든 서버에 설치_
 
 #### 1. 자바 설치
@@ -317,3 +312,16 @@ _password : 1234_
 `CREATE DATABASE oozie DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;`
 
 `GRANT ALL ON oozie.* TO 'oozie'@'%' IDENTIFIED BY '1234';`
+
+
+List the following in your GitHub
+1. A command and output that shows the hostname of your database server
+2. A command and output that reports the database server version
+3. A command and output that lists all the databases in the server
+
+```
+SHOW VARIABLES WHERE Variable_name = 'hostname';
+SELECT VERSION();
+show databaes;
+
+```
