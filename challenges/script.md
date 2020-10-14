@@ -16,30 +16,6 @@
 
 ### 환경 세팅
 
-* 호스트 세팅
-
-  `sudo hostnamectl set-hostname cm.bdai.com`
-  `sudo hostnamectl set-hostname m1.bdai.com`
-  `sudo hostnamectl set-hostname d1.bdai.com`
-  `sudo hostnamectl set-hostname d2.bdai.com`
-  `sudo hostnamectl set-hostname d3.bdai.com`
-
-  `sudo vi /etc/hosts`
-
-  ```
-  10.0.0.111  cm.bdai.com cm
-  10.0.0.239  m1.bdai.com m1
-  10.0.0.177   d1.bdai.com d1
-  10.0.0.124  d2.bdai.com d2
-  10.0.0.174  d3.bdai.com d3
-  ```
-
-  `getent hosts`
-  
-  세팅 후 재접속
-
->>>>>> img1.png  
-
 * 비밀 번호 세팅
 
 `passwd centos`
@@ -80,12 +56,42 @@ Add the following linux accounts to all nodes
  training    ALL=(ALL)   NOPASSWD: ALL
  sudo chmod -w /etc/sudoers
 
-
- su training`
 ```
+ ![img2](/img/img2.png)
+
 List the your instances by IP address and DNS name (don’t use /etc/hosts for this)
+
+* 호스트 세팅
+
+  `sudo hostnamectl set-hostname cm.bdai.com`
+  `sudo hostnamectl set-hostname m1.bdai.com`
+  `sudo hostnamectl set-hostname d1.bdai.com`
+  `sudo hostnamectl set-hostname d2.bdai.com`
+  `sudo hostnamectl set-hostname d3.bdai.com`
+
+  `sudo vi /etc/hosts`
+
+  ```
+  10.0.0.111  cm.bdai.com cm
+  10.0.0.239  m1.bdai.com m1
+  10.0.0.177   d1.bdai.com d1
+  10.0.0.124  d2.bdai.com d2
+  10.0.0.174  d3.bdai.com d3
+  ```
+
+  `getent hosts`
+  
+  세팅 후 재접속
+ ![img1](/img/img1.png)
+
 List the Linux release you are using
 List the file system capacity for the first node (master node)
+
+```
+df -h
+```
+ ![img3](/img/img3.png)
+ 
 List the command and output for yum repolist enabled
 List the /etc/passwd entries for training (only in master name node) List the /etc/group entries for skcc (only in master name node)
 List output of the flowing commands:
