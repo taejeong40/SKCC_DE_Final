@@ -102,7 +102,23 @@ yum repolist
  ![img4](./img/img4.png)
  
  
-List the /etc/passwd entries for training (only in master name node) List the /etc/group entries for skcc (only in master name node)
+List the /etc/passwd entries for training (only in master name node) 
+List the /etc/group entries for skcc (only in master name node)
+
+```
+sudo cat /etc/passwd | grep training
+sudo cat /etc/group | gerp skcc
+
+```
+ ![img5](./img/img5.png)
+
 List output of the flowing commands:
  1. getent group skcc
  2. getent passwd training
+
+```
+getent group skcc
+getent passwd training
+
+```
+ ![img6](./img/img6.png)
