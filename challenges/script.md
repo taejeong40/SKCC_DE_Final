@@ -322,6 +322,8 @@ List the following in your GitHub
 ```
 SHOW VARIABLES WHERE Variable_name = 'hostname';
 SELECT VERSION();
-show databaes;
+show databases;
 
 ```
+
+![img8](./img/img8.png)
